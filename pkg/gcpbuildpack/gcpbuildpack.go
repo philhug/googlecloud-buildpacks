@@ -453,3 +453,9 @@ func (ctx *Context) AddLabel(key, value string) {
 	ctx.Logf("Adding image label %s: %s", key, value)
 	ctx.buildResult.Labels = append(ctx.buildResult.Labels, libcnb.Label{Key: key, Value: value})
 }
+
+// AddLabel adds a label to the user's application container.
+func (ctx *Context) AddLabelRaw(key, value string) {
+	ctx.Logf("Adding image label %s: %s", key, value)
+	ctx.buildResult.Labels = append(ctx.buildResult.Labels, libcnb.Label{Key: key, Value: value})
+}
